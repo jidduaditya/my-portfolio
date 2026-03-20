@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(open /Users/aasmac/Desktop/Website/index.html)",
+      "Bash(textutil -convert txt CV_AdityaJiddu_ProductOwner.docx -stdout 2>/dev/null || python3 -c \"\nimport zipfile, re\nwith zipfile.ZipFile\\('CV_AdityaJiddu_ProductOwner.docx'\\) as z:\n    xml = z.read\\('word/document.xml'\\).decode\\('utf-8'\\)\ntext = re.sub\\(r'<w:br[^/]*/>', '\\\\n', xml\\)\ntext = re.sub\\(r'</w:p>', '\\\\n', text\\)\ntext = re.sub\\(r'<[^>]+>', '', text\\)\ntext = re.sub\\(r'\\\\n{3,}', '\\\\n\\\\n', text\\)\nprint\\(text[:15000]\\)\n\")",
+      "Bash(osascript << 'EOF'\ntell application \"Microsoft Word\"\n  set theDoc to open POSIX file \"/Users/aasmac/Desktop/Website/CV_AdityaJiddu_ProductOwner.docx\"\n  delay 2\n  save as theDoc file name \"/Users/aasmac/Desktop/Website/resume.pdf\" file format format PDF\n  close theDoc saving no\nend tell\nEOF)",
+      "Bash(ls /Users/aasmac/Desktop/Website/*.docx /Users/aasmac/Desktop/Website/*.pdf /Users/aasmac/Desktop/*.docx /Users/aasmac/Desktop/*.pdf 2>/dev/null)",
+      "Bash(open /Users/aasmac/Desktop/Website/portfolio.html && open /Users/aasmac/Desktop/Website/contact.html)",
+      "Bash(for f:*)",
+      "Bash(ls /Users/aasmac/Desktop/Website/screenshot* /Users/aasmac/Desktop/screenshot* 2>/dev/null)"
+    ]
+  }
+}

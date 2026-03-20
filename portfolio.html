@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Aditya Jiddu</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── HERO ── -->
+  <div class="hero-outer" style="padding-bottom: 0;">
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="portfolio.html" class="nav-link nav-active">My Portfolio</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <span class="nav-sep">·</span>
+      <a href="https://www.linkedin.com/in/adityajiddu/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+      <a href="#" class="nav-link" id="resume-btn">Resume</a>
+    </nav>
+    <div class="intro" style="gap: 12px;">
+      <span class="label">Work</span>
+      <h1 class="name">Portfolio</h1>
+      <p class="bio">Product documents from real-world projects — PRDs, discovery artefacts, and delivery work.</p>
+    </div>
+  </div>
+
+  <!-- ── DOCUMENT CARDS ── -->
+  <section class="portfolio-section">
+    <div class="portfolio-grid">
+
+      <div class="doc-card" data-pdf="PRD - Group 7 (1).pdf">
+        <div class="doc-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <div class="doc-meta">
+          <span class="doc-type">PRD</span>
+        </div>
+        <h3 class="doc-title">Group 7 — Product Requirements Document</h3>
+        <p class="doc-desc">Product requirements document outlining feature scope, user needs, and delivery specifications for the Group 7 initiative.</p>
+        <button class="doc-open-btn">View Document →</button>
+      </div>
+
+      <div class="doc-card" data-pdf="Group7_Team_Thala_NoSheeet_PRD_v2.docx.pdf">
+        <div class="doc-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <div class="doc-meta">
+          <span class="doc-type">PRD · v2</span>
+        </div>
+        <h3 class="doc-title">NoSheeet — PRD v2</h3>
+        <p class="doc-desc">Second iteration of the NoSheeet PRD developed by Team Thala, refining product scope, user stories, and acceptance criteria.</p>
+        <button class="doc-open-btn">View Document →</button>
+      </div>
+
+      <div class="doc-card" data-pdf="PRD_Peak Guardian - Team Thala.docx.pdf">
+        <div class="doc-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <div class="doc-meta">
+          <span class="doc-type">PRD</span>
+        </div>
+        <h3 class="doc-title">Peak Guardian — PRD</h3>
+        <p class="doc-desc">Full product requirements document for Peak Guardian, covering problem definition, user journeys, and feature specifications.</p>
+        <button class="doc-open-btn">View Document →</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    Made with <span>care</span> &mdash; Aditya Jiddu
+  </footer>
+
+  <!-- ── PDF MODAL ── -->
+  <div id="pdf-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-label="Document viewer">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close">✕</button>
+      <embed id="pdf-embed" src="" type="application/pdf" class="pdf-embed" />
+    </div>
+  </div>
+
+  <!-- ── RESUME MODAL ── -->
+  <div id="resume-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-label="Resume">
+      <button class="modal-close" id="resume-close-btn" aria-label="Close">✕</button>
+      <embed src="resume.pdf" type="application/pdf" class="pdf-embed" />
+    </div>
+  </div>
+
+  <script>
+    // Document cards
+    const modal = document.getElementById('pdf-modal');
+    const pdfEmbed = document.getElementById('pdf-embed');
+    const closeBtn = document.getElementById('modal-close-btn');
+
+    document.querySelectorAll('.doc-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const pdf = card.dataset.pdf;
+        pdfEmbed.src = encodeURI(pdf);
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      setTimeout(() => { pdfEmbed.src = ''; }, 300);
+    }
+
+    // Resume modal
+    const resumeModal = document.getElementById('resume-modal');
+    document.getElementById('resume-btn').addEventListener('click', e => {
+      e.preventDefault();
+      resumeModal.classList.add('is-open');
+      resumeModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    });
+    document.getElementById('resume-close-btn').addEventListener('click', () => {
+      resumeModal.classList.remove('is-open');
+      resumeModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
+    resumeModal.addEventListener('click', e => {
+      if (e.target === resumeModal) {
+        resumeModal.classList.remove('is-open');
+        resumeModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        closeModal();
+        resumeModal.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infosys · TalkTalk — Aditya Jiddu</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="hero-outer" style="padding-bottom: 0;">
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="portfolio.html" class="nav-link">My Portfolio</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <span class="nav-sep">·</span>
+      <a href="https://www.linkedin.com/in/adityajiddu/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+      <a href="#" class="nav-link" id="resume-btn">Resume</a>
+    </nav>
+  </div>
+
+  <main class="detail-main">
+
+    <div class="detail-hero">
+      <span class="label">Experience</span>
+      <h1 class="detail-company">Infosys Limited</h1>
+      <p class="detail-role">Technical Product Owner – Digital Consumer Platform</p>
+      <div class="detail-meta">
+        <span class="detail-date">May 2021 – June 2023</span>
+        <span class="detail-location">India &nbsp;·&nbsp; Client: TalkTalk, UK</span>
+      </div>
+    </div>
+
+    <div class="detail-card">
+
+      <div class="detail-section">
+        <h2>About the Role</h2>
+        <p>
+          Led product backlog and feature delivery for a high-traffic telecom platform supporting
+          1.9M+ monthly users across onboarding, account management, and digital self-service journeys.
+          Focused on usability, adoption, and operational efficiency for TalkTalk's consumer digital estate.
+        </p>
+      </div>
+
+      <hr class="detail-divider" />
+
+      <div class="detail-section">
+        <h2>Key Contributions</h2>
+        <ul>
+          <li>Owned digital journey enhancements focused on usability, adoption, and operational efficiency.</li>
+          <li>Collaborated with UX and Engineering to improve customer experience across web and mobile touchpoints.</li>
+          <li>Used user feedback, analytics, and stakeholder insights to refine priorities and maximise delivery value.</li>
+          <li>Facilitated sprint demos and stakeholder reviews, ensuring alignment and transparency across the programme.</li>
+          <li>Contributed to 95%+ on-time releases by proactively managing scope, dependencies, and trade-offs.</li>
+          <li>Supported API-driven product enhancements enabling smoother customer interactions and reduced friction.</li>
+        </ul>
+      </div>
+
+      <hr class="detail-divider" />
+
+      <div class="detail-section">
+        <h2>Impact</h2>
+        <div class="impact-row">
+          <div class="impact-stat">
+            <span class="impact-number">1.9M+</span>
+            <span class="impact-label">Monthly active users on platform</span>
+          </div>
+          <div class="impact-stat">
+            <span class="impact-number">95%+</span>
+            <span class="impact-label">On-time release rate</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="detail-divider" />
+
+      <div class="detail-section">
+        <h2>Skills Demonstrated</h2>
+        <div class="skill-tags">
+          <span class="skill-tag">Consumer Journey Optimisation</span>
+          <span class="skill-tag">Backlog Management</span>
+          <span class="skill-tag">Stakeholder Communication</span>
+          <span class="skill-tag">Delivery Leadership</span>
+          <span class="skill-tag">UX Collaboration</span>
+          <span class="skill-tag">API-driven Product</span>
+          <span class="skill-tag">Agile / SAFe</span>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    Made with <span>care</span> &mdash; Aditya Jiddu
+  </footer>
+
+
+  <!-- ── RESUME MODAL ── -->
+  <div id="resume-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-label="Resume">
+      <button class="modal-close" id="resume-close-btn" aria-label="Close">✕</button>
+      <embed src="resume.pdf" type="application/pdf" class="pdf-embed" />
+    </div>
+  </div>
+  <script>
+    const resumeModal = document.getElementById("resume-modal");
+    document.getElementById("resume-btn").addEventListener("click", e => {
+      e.preventDefault();
+      resumeModal.classList.add("is-open");
+      resumeModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    });
+    document.getElementById("resume-close-btn").addEventListener("click", () => {
+      resumeModal.classList.remove("is-open");
+      resumeModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    });
+    resumeModal.addEventListener("click", e => {
+      if (e.target === resumeModal) {
+        resumeModal.classList.remove("is-open");
+        resumeModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+    });
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        resumeModal.classList.remove("is-open");
+        resumeModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TCS · Vodacom — Aditya Jiddu</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="hero-outer" style="padding-bottom: 0;">
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="portfolio.html" class="nav-link">My Portfolio</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <span class="nav-sep">·</span>
+      <a href="https://www.linkedin.com/in/adityajiddu/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+      <a href="#" class="nav-link" id="resume-btn">Resume</a>
+    </nav>
+  </div>
+
+  <main class="detail-main">
+
+    <div class="detail-hero">
+      <span class="label">Experience</span>
+      <h1 class="detail-company">Tata Consultancy Services</h1>
+      <p class="detail-role">Product Owner / Solution Architect</p>
+      <div class="detail-meta">
+        <span class="detail-date">August 2018 – December 2020</span>
+        <span class="detail-location">South Africa &nbsp;·&nbsp; Client: Vodacom</span>
+      </div>
+    </div>
+
+    <div class="detail-card">
+
+      <div class="detail-section">
+        <h2>About the Role</h2>
+        <p>
+          Owned digital currency and loyalty platform features serving 26M+ subscribers, supporting
+          payments, engagement, and retention initiatives for Vodacom South Africa. Combined product
+          ownership with solution architecture responsibilities to bridge business goals with technical delivery.
+        </p>
+      </div>
+
+      <hr class="detail-divider" />
+
+      <div class="detail-section">
+        <h2>Key Contributions</h2>
+        <ul>
+          <li>Defined and prioritised product backlog for loyalty and transaction journeys impacting user engagement at scale.</li>
+          <li>Collaborated with business, vendors, and technical teams to deliver scalable digital solutions across the platform.</li>
+          <li>Supported post-launch optimisation through feedback analysis and iterative feature improvement.</li>
+          <li>Contributed to €5.4M+ in annual revenue through platform improvements and disciplined delivery execution.</li>
+          <li>Recognised with multiple CEO Awards for innovation and outstanding cross-functional collaboration.</li>
+        </ul>
+      </div>
+
+      <hr class="detail-divider" />
+
+      <div class="detail-section">
+        <h2>Impact</h2>
+        <div class="impact-row">
+          <div class="impact-stat">
+            <span class="impact-number">26M+</span>
+            <span class="impact-label">Subscribers on platform</span>
+          </div>
+          <div class="impact-stat">
+            <span class="impact-number">€5.4M+</span>
+            <span class="impact-label">Annual revenue contribution</span>
+          </div>
+          <div class="impact-stat">
+            <span class="impact-number">Multiple</span>
+            <span class="impact-label">CEO Awards for innovation</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="detail-divider" />
+
+      <div class="detail-section">
+        <h2>Skills Demonstrated</h2>
+        <div class="skill-tags">
+          <span class="skill-tag">Engagement-focused Product Thinking</span>
+          <span class="skill-tag">Large-scale Platform Ownership</span>
+          <span class="skill-tag">Solution Architecture</span>
+          <span class="skill-tag">Loyalty &amp; Payments</span>
+          <span class="skill-tag">Vendor Collaboration</span>
+          <span class="skill-tag">Cross-functional Leadership</span>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    Made with <span>care</span> &mdash; Aditya Jiddu
+  </footer>
+
+
+  <!-- ── RESUME MODAL ── -->
+  <div id="resume-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-label="Resume">
+      <button class="modal-close" id="resume-close-btn" aria-label="Close">✕</button>
+      <embed src="resume.pdf" type="application/pdf" class="pdf-embed" />
+    </div>
+  </div>
+  <script>
+    const resumeModal = document.getElementById("resume-modal");
+    document.getElementById("resume-btn").addEventListener("click", e => {
+      e.preventDefault();
+      resumeModal.classList.add("is-open");
+      resumeModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    });
+    document.getElementById("resume-close-btn").addEventListener("click", () => {
+      resumeModal.classList.remove("is-open");
+      resumeModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    });
+    resumeModal.addEventListener("click", e => {
+      if (e.target === resumeModal) {
+        resumeModal.classList.remove("is-open");
+        resumeModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+    });
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        resumeModal.classList.remove("is-open");
+        resumeModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+    });
+  </script>
+
+</body>
+</html>

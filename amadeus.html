@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amadeus Labs — Aditya Jiddu</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="hero-outer" style="padding-bottom: 0;">
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="portfolio.html" class="nav-link">My Portfolio</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <span class="nav-sep">·</span>
+      <a href="https://www.linkedin.com/in/adityajiddu/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+      <a href="#" class="nav-link" id="resume-btn">Resume</a>
+    </nav>
+  </div>
+
+  <main class="detail-main">
+
+    <div class="detail-hero">
+      <span class="label">Experience</span>
+      <h1 class="detail-company">Amadeus Labs</h1>
+      <p class="detail-role">Product Manager</p>
+      <div class="detail-meta">
+        <span class="detail-date">June 2023 – August 2025</span>
+        <span class="detail-location">India</span>
+      </div>
+    </div>
+
+    <div class="detail-card">
+
+      <div class="detail-section">
+        <h2>About the Role</h2>
+        <p>
+          Owned a key product value stream within an enterprise airline digital platform, enabling scalable,
+          customer-facing capabilities used globally. Responsible for end-to-end product management — from
+          discovery and problem validation to delivery, iteration, and commercial impact.
+        </p>
+      </div>
+
+      <hr class="detail-divider" />
+
+      <div class="detail-section">
+        <h2>Key Contributions</h2>
+        <ul>
+          <li>Defined and managed roadmap for platform features impacting customer servicing, booking experiences, and operational efficiency.</li>
+          <li>Partnered with Design and Engineering in discovery to validate needs, reduce delivery risk, and shape viable solutions.</li>
+          <li>Translated complex user and business needs into clear product definitions, user stories, and acceptance criteria.</li>
+          <li>Balanced delivery pace with product quality, enabling consistent release cycles while reducing rework.</li>
+          <li>Collaborated with stakeholders across markets to ensure scalable and consistent digital experiences.</li>
+          <li>Improved defect prioritisation and feedback loops, contributing to a 25% reduction in customer-reported issues.</li>
+          <li>Supported initiatives generating €4M+ in annual recurring revenue through incremental product improvements.</li>
+        </ul>
+      </div>
+
+      <hr class="detail-divider" />
+
+      <div class="detail-section">
+        <h2>Impact</h2>
+        <div class="impact-row">
+          <div class="impact-stat">
+            <span class="impact-number">€4M+</span>
+            <span class="impact-label">Annual recurring revenue supported</span>
+          </div>
+          <div class="impact-stat">
+            <span class="impact-number">25%</span>
+            <span class="impact-label">Reduction in customer-reported issues</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="detail-divider" />
+
+      <div class="detail-section">
+        <h2>Skills Demonstrated</h2>
+        <div class="skill-tags">
+          <span class="skill-tag">Discovery &amp; Validation</span>
+          <span class="skill-tag">Roadmap Management</span>
+          <span class="skill-tag">Prioritisation</span>
+          <span class="skill-tag">Scalable Design Thinking</span>
+          <span class="skill-tag">Outcome Ownership</span>
+          <span class="skill-tag">Stakeholder Collaboration</span>
+          <span class="skill-tag">Agile Delivery</span>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    Made with <span>care</span> &mdash; Aditya Jiddu
+  </footer>
+
+
+  <!-- ── RESUME MODAL ── -->
+  <div id="resume-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-label="Resume">
+      <button class="modal-close" id="resume-close-btn" aria-label="Close">✕</button>
+      <embed src="resume.pdf" type="application/pdf" class="pdf-embed" />
+    </div>
+  </div>
+  <script>
+    const resumeModal = document.getElementById("resume-modal");
+    document.getElementById("resume-btn").addEventListener("click", e => {
+      e.preventDefault();
+      resumeModal.classList.add("is-open");
+      resumeModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    });
+    document.getElementById("resume-close-btn").addEventListener("click", () => {
+      resumeModal.classList.remove("is-open");
+      resumeModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    });
+    resumeModal.addEventListener("click", e => {
+      if (e.target === resumeModal) {
+        resumeModal.classList.remove("is-open");
+        resumeModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+    });
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        resumeModal.classList.remove("is-open");
+        resumeModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+    });
+  </script>
+
+</body>
+</html>

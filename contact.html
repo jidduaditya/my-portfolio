@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Aditya Jiddu</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── HERO ── -->
+  <div class="hero-outer" style="padding-bottom: 0;">
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="portfolio.html" class="nav-link">My Portfolio</a>
+      <a href="contact.html" class="nav-link nav-active">Contact</a>
+      <span class="nav-sep">·</span>
+      <a href="https://www.linkedin.com/in/adityajiddu/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+      <a href="#" class="nav-link" id="resume-btn">Resume</a>
+    </nav>
+    <div class="intro" style="gap: 12px;">
+      <span class="label">Get in touch</span>
+      <h1 class="name">Contact</h1>
+      <p class="bio">Reach out for senior product roles, advisory engagements, or just to connect.</p>
+    </div>
+  </div>
+
+  <!-- ── CONTACT CARDS ── -->
+  <section class="portfolio-section">
+    <div class="contact-grid">
+
+      <!-- Phone -->
+      <div class="contact-card">
+        <div class="contact-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.34 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z"/>
+          </svg>
+        </div>
+        <p class="contact-label">Mobile</p>
+        <p class="contact-value">+91 888 450 0323</p>
+        <button class="contact-copy-btn" data-copy="+918884500323" aria-label="Copy phone number">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <!-- Email -->
+      <div class="contact-card">
+        <div class="contact-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <p class="contact-label">Email</p>
+        <p class="contact-value">jiddu.aditya@gmail.com</p>
+        <button class="contact-copy-btn" data-copy="jiddu.aditya@gmail.com" aria-label="Copy email address">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    Made with <span>care</span> &mdash; Aditya Jiddu
+  </footer>
+
+  <!-- ── RESUME MODAL ── -->
+  <div id="resume-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-label="Resume">
+      <button class="modal-close" id="resume-close-btn" aria-label="Close">✕</button>
+      <embed src="resume.pdf" type="application/pdf" class="pdf-embed" />
+    </div>
+  </div>
+
+  <script>
+    // Copy to clipboard
+    document.querySelectorAll('.contact-copy-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const text = btn.dataset.copy;
+        navigator.clipboard.writeText(text).then(() => {
+          const span = btn.querySelector('span');
+          const original = span.textContent;
+          span.textContent = 'Copied!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            span.textContent = original;
+            btn.classList.remove('copied');
+          }, 2000);
+        });
+      });
+    });
+
+    // Resume modal
+    const resumeModal = document.getElementById('resume-modal');
+    document.getElementById('resume-btn').addEventListener('click', e => {
+      e.preventDefault();
+      resumeModal.classList.add('is-open');
+      resumeModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    });
+    document.getElementById('resume-close-btn').addEventListener('click', () => {
+      resumeModal.classList.remove('is-open');
+      resumeModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
+    resumeModal.addEventListener('click', e => {
+      if (e.target === resumeModal) {
+        resumeModal.classList.remove('is-open');
+        resumeModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        resumeModal.classList.remove('is-open');
+        resumeModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+
+</body>
+</html>

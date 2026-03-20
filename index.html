@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aditya Jiddu</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Skip gate instantly for returning visitors — must run before render -->
+  <script>if (localStorage.getItem('portfolio_unlocked')) document.documentElement.classList.add('gate-skip');</script>
+</head>
+<body>
+
+  <!-- ── EMAIL GATE ── -->
+  <div id="gate" role="dialog" aria-label="Enter your email to view portfolio">
+    <div class="gate-inner">
+      <img class="gate-avatar" src="photo.jpg" alt="Aditya Jiddu" />
+      <h1 class="gate-name">Aditya Jiddu</h1>
+      <p class="gate-tagline">Clarity in complexity. Discipline in execution.</p>
+      <form class="gate-form" id="gate-form" novalidate>
+        <input
+          type="email"
+          id="gate-email"
+          class="gate-input"
+          placeholder="Enter your email address"
+          autocomplete="email"
+        />
+        <p class="gate-error" id="gate-error" aria-live="polite"></p>
+        <button type="submit" class="gate-btn" id="gate-btn">View My Portfolio</button>
+      </form>
+      <p class="gate-note">Your email is safe. No spam, ever.</p>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <div class="hero-outer">
+
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link nav-active">Home</a>
+      <a href="portfolio.html" class="nav-link">My Portfolio</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <span class="nav-sep">·</span>
+      <a href="https://www.linkedin.com/in/adityajiddu/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+      <a href="#" class="nav-link" id="resume-btn">Resume</a>
+    </nav>
+
+    <div class="hero-content">
+
+      <div class="intro">
+        <h1 class="name">Aditya Jiddu</h1>
+        <p class="tagline">Clarity in complexity. Discipline in execution.</p>
+        <div class="divider"></div>
+        <p class="bio">
+          Senior Product Owner with a decade of experience shipping B2B platforms, internal tools,
+          and large-scale SaaS products across airline and telecom domains. Known for bringing
+          clarity to complex systems and executing with discipline across Agile and SAFe environments.
+        </p>
+      </div>
+
+      <div class="hero-photo">
+        <img class="avatar" src="photo.jpg" alt="Aditya Jiddu" />
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ── KEY ACHIEVEMENTS + EXPERIENCE ── -->
+  <div class="home-columns">
+
+    <!-- ── KEY ACHIEVEMENTS ── -->
+    <section class="achievements-section">
+      <h2 class="section-title">Key Achievements</h2>
+      <div class="achievements-grid">
+        <div class="achievement-card">
+          <span class="achievement-number">€4M+</span>
+          <span class="achievement-label">Annual recurring revenue supported at Amadeus Labs</span>
+        </div>
+        <div class="achievement-card">
+          <span class="achievement-number">1.9M+</span>
+          <span class="achievement-label">Monthly users on TalkTalk's digital platform</span>
+        </div>
+        <div class="achievement-card">
+          <span class="achievement-number">€5.4M+</span>
+          <span class="achievement-label">Annual revenue contribution at Vodacom South Africa</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EXPERIENCE TIMELINE ── -->
+    <section class="timeline-section">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline-v">
+
+        <a href="amadeus.html" class="timeline-v-item">
+          <div class="timeline-v-dot"></div>
+          <div class="timeline-h-body">
+            <span class="timeline-date">Jun 2023 – Aug 2025</span>
+            <span class="timeline-company">Amadeus Labs</span>
+            <span class="timeline-role">Product Manager</span>
+            <span class="timeline-location">India</span>
+          </div>
+        </a>
+
+        <a href="infosys.html" class="timeline-v-item">
+          <div class="timeline-v-dot"></div>
+          <div class="timeline-h-body">
+            <span class="timeline-date">May 2021 – Jun 2023</span>
+            <span class="timeline-company">Infosys</span>
+            <span class="timeline-client">TalkTalk, UK</span>
+            <span class="timeline-role">Technical Product Owner</span>
+            <span class="timeline-location">India</span>
+          </div>
+        </a>
+
+        <a href="tcs-vodacom.html" class="timeline-v-item">
+          <div class="timeline-v-dot"></div>
+          <div class="timeline-h-body">
+            <span class="timeline-date">Aug 2018 – Dec 2020</span>
+            <span class="timeline-company">TCS</span>
+            <span class="timeline-client">Vodacom, South Africa</span>
+            <span class="timeline-role">Product Owner / Solution Architect</span>
+            <span class="timeline-location">South Africa</span>
+          </div>
+        </a>
+
+        <a href="tcs-openreach.html" class="timeline-v-item">
+          <div class="timeline-v-dot"></div>
+          <div class="timeline-h-body">
+            <span class="timeline-date">Jul 2015 – Jul 2018</span>
+            <span class="timeline-company">TCS</span>
+            <span class="timeline-client">Openreach, UK</span>
+            <span class="timeline-role">Business Analyst</span>
+            <span class="timeline-location">India</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ── SUBSCRIBE ── -->
+  <section class="subscribe-section">
+    <div class="subscribe-inner">
+      <h2 class="subscribe-title">Stay in the loop</h2>
+      <p class="subscribe-desc">Occasional updates on product thinking, career moves, and work I'm proud of. No spam.</p>
+      <form class="subscribe-form" id="subscribe-form" novalidate>
+        <input
+          type="email"
+          id="subscribe-email"
+          class="subscribe-input"
+          placeholder="your@email.com"
+          required
+          autocomplete="email"
+        />
+        <button type="submit" class="subscribe-btn" id="subscribe-submit">Subscribe</button>
+      </form>
+      <p class="subscribe-feedback" id="subscribe-feedback" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    Made with <span>care</span> &mdash; Aditya Jiddu
+  </footer>
+
+  <!-- ── RESUME MODAL ── -->
+  <div id="resume-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-label="Resume">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close">✕</button>
+      <embed src="resume.pdf" type="application/pdf" class="pdf-embed" />
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('resume-modal');
+    const resumeBtn = document.getElementById('resume-btn');
+    const closeBtn = document.getElementById('modal-close-btn');
+
+    resumeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.setAttribute('aria-hidden', 'false');
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+
+  <!-- ── SUPABASE ── -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const { createClient } = supabase;
+    // Public keys — safe to commit. Supabase anon key is intentionally
+    // client-side; row-level security enforces access control server-side.
+    const db = createClient(
+      'https://gtcrseahjnznilnzkscv.supabase.co',
+      'sb_publishable_hotdf8Nax3QZwY0kTYv5Iw_Yb2wJHT8'
+    );
+
+    // ── EMAIL GATE ──
+    (function () {
+      const gate    = document.getElementById('gate');
+      const gateForm = document.getElementById('gate-form');
+      const gateInput = document.getElementById('gate-email');
+      const gateBtn  = document.getElementById('gate-btn');
+      const gateError = document.getElementById('gate-error');
+
+      // Returning visitor — gate already hidden via CSS, nothing to do
+      if (document.documentElement.classList.contains('gate-skip')) return;
+
+      // Lock scroll while gate is visible
+      document.body.style.overflow = 'hidden';
+
+      function unlockPortfolio() {
+        localStorage.setItem('portfolio_unlocked', '1');
+        document.body.style.overflow = '';
+        gate.classList.add('gate-hiding');
+        setTimeout(() => { gate.style.display = 'none'; }, 700);
+      }
+
+      gateForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = gateInput.value.trim();
+
+        // Validate format
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          gateInput.classList.add('gate-input--error');
+          gateError.textContent = 'Please enter a valid email address.';
+          return;
+        }
+
+        gateInput.classList.remove('gate-input--error');
+        gateError.textContent = '';
+        gateBtn.disabled = true;
+        gateBtn.textContent = 'One moment…';
+
+        try {
+          const { error } = await db.from('subscribers').insert([{ email }]);
+          // Duplicate is fine — treat as success. Any other error: still let through.
+          if (error && error.code !== '23505') {
+            console.warn('Gate Supabase error:', error);
+          }
+        } catch (err) {
+          console.warn('Gate: Supabase unreachable, letting visitor through.', err);
+        }
+
+        gateBtn.textContent = 'You\'re in ✓';
+        setTimeout(unlockPortfolio, 750);
+      });
+    })();
+
+    // ── SUBSCRIBE FORM ──
+    (function () {
+      const form     = document.getElementById('subscribe-form');
+      const input    = document.getElementById('subscribe-email');
+      const btn      = document.getElementById('subscribe-submit');
+      const feedback = document.getElementById('subscribe-feedback');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = input.value.trim();
+        if (!email) return;
+
+        btn.disabled = true;
+        btn.textContent = 'Subscribing…';
+        feedback.textContent = '';
+        feedback.className = 'subscribe-feedback';
+
+        const { error } = await db.from('subscribers').insert([{ email }]);
+
+        if (error) {
+          if (error.code === '23505') {
+            feedback.textContent = 'You\'re already subscribed!';
+            feedback.classList.add('subscribe-feedback--info');
+          } else {
+            feedback.textContent = 'Something went wrong. Please try again.';
+            feedback.classList.add('subscribe-feedback--error');
+          }
+          btn.disabled = false;
+          btn.textContent = 'Subscribe';
+        } else {
+          feedback.textContent = '✓ You\'re in! Thanks for subscribing.';
+          feedback.classList.add('subscribe-feedback--success');
+          form.reset();
+          btn.disabled = false;
+          btn.textContent = 'Subscribe';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

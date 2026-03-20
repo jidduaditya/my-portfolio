@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TCS · Openreach — Aditya Jiddu</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="hero-outer" style="padding-bottom: 0;">
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="portfolio.html" class="nav-link">My Portfolio</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <span class="nav-sep">·</span>
+      <a href="https://www.linkedin.com/in/adityajiddu/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+      <a href="#" class="nav-link" id="resume-btn">Resume</a>
+    </nav>
+  </div>
+
+  <main class="detail-main">
+
+    <div class="detail-hero">
+      <span class="label">Experience</span>
+      <h1 class="detail-company">Tata Consultancy Services</h1>
+      <p class="detail-role">Business Analyst</p>
+      <div class="detail-meta">
+        <span class="detail-date">July 2015 – July 2018</span>
+        <span class="detail-location">India &nbsp;·&nbsp; Client: Openreach, UK</span>
+      </div>
+    </div>
+
+    <div class="detail-card">
+
+      <div class="detail-section">
+        <h2>About the Role</h2>
+        <p>
+          Supported Openreach UK's operational systems as a Business Analyst, translating complex
+          operational challenges into actionable system improvements. Worked closely with cross-functional
+          teams to enhance process reliability, speed, and delivery efficiency.
+        </p>
+      </div>
+
+      <hr class="detail-divider" />
+
+      <div class="detail-section">
+        <h2>Key Contributions</h2>
+        <ul>
+          <li>Translated operational challenges into system improvements that measurably increased delivery efficiency and reduced costs.</li>
+          <li>Collaborated with cross-functional teams to improve process reliability and speed across operational workflows.</li>
+          <li>Recognised with internal innovation awards for impactful process improvement contributions.</li>
+        </ul>
+      </div>
+
+      <hr class="detail-divider" />
+
+      <div class="detail-section">
+        <h2>Recognition</h2>
+        <div class="impact-row">
+          <div class="impact-stat">
+            <span class="impact-number">Awards</span>
+            <span class="impact-label">Internal innovation recognition</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="detail-divider" />
+
+      <div class="detail-section">
+        <h2>Skills Demonstrated</h2>
+        <div class="skill-tags">
+          <span class="skill-tag">Business Analysis</span>
+          <span class="skill-tag">Process Improvement</span>
+          <span class="skill-tag">Requirements Gathering</span>
+          <span class="skill-tag">Operational Efficiency</span>
+          <span class="skill-tag">Cross-functional Collaboration</span>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    Made with <span>care</span> &mdash; Aditya Jiddu
+  </footer>
+
+
+  <!-- ── RESUME MODAL ── -->
+  <div id="resume-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-label="Resume">
+      <button class="modal-close" id="resume-close-btn" aria-label="Close">✕</button>
+      <embed src="resume.pdf" type="application/pdf" class="pdf-embed" />
+    </div>
+  </div>
+  <script>
+    const resumeModal = document.getElementById("resume-modal");
+    document.getElementById("resume-btn").addEventListener("click", e => {
+      e.preventDefault();
+      resumeModal.classList.add("is-open");
+      resumeModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    });
+    document.getElementById("resume-close-btn").addEventListener("click", () => {
+      resumeModal.classList.remove("is-open");
+      resumeModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    });
+    resumeModal.addEventListener("click", e => {
+      if (e.target === resumeModal) {
+        resumeModal.classList.remove("is-open");
+        resumeModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+    });
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        resumeModal.classList.remove("is-open");
+        resumeModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+    });
+  </script>
+
+</body>
+</html>
