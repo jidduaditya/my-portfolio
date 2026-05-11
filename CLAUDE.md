@@ -25,6 +25,7 @@ A personal portfolio website. Built with plain HTML, CSS, and vanilla JavaScript
 - amadeus.html -- Amadeus Labs experience detail page (Jun 2023 – Aug 2025)
 - infosys.html -- Infosys / TalkTalk detail page (May 2021 – Jun 2023)
 - tcs-vodacom.html -- TCS / Vodacom SA detail page (Aug 2018 – Dec 2020)
+- independent.html -- Independent product work detail page (Aug 2025 – Present)
 - tcs-openreach.html -- TCS / Openreach UK detail page (Jul 2015 – Jul 2018)
 - styles.css -- all styles (single shared stylesheet, ~1300 lines)
 - photo.jpg -- profile photo

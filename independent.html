@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Independent Product Work — Aditya Jiddu</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="hero-outer" style="padding-bottom: 0;">
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="portfolio.html" class="nav-link">My Portfolio</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <span class="nav-sep">·</span>
+      <a href="https://www.linkedin.com/in/adityajiddu/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+      <a href="https://github.com/jidduaditya" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
+      <a href="#" class="nav-link" id="resume-btn">Resume</a>
+    </nav>
+  </div>
+
+  <main class="detail-main">
+
+    <div class="detail-hero">
+      <span class="label">Current</span>
+      <h1 class="detail-company">Independent Product Work</h1>
+      <p class="detail-role">AI-Native Product Builder</p>
+      <div class="detail-meta">
+        <span class="detail-date">August 2025 – Present</span>
+        <span class="detail-location">Bengaluru, India</span>
+      </div>
+    </div>
+
+    <div class="detail-card">
+
+      <div class="detail-section">
+        <h2>About</h2>
+        <p>
+          Stepped off full-time work to focus on AI-native product building and PM craft.
+          Shipping products solo: user research, product definition, UX, full-stack implementation,
+          and deployment. Running product discovery in public via LinkedIn and user interviews.
+        </p>
+      </div>
+
+      <hr class="detail-divider" />
+
+      <div class="detail-section">
+        <h2>groupism.space</h2>
+        <p>
+          A group trip coordinator built around one insight: the problem is unspoken disagreement,
+          not logistics. One person always absorbs the planning load and has the worst trip.
+        </p>
+        <ul>
+          <li>Built an AI insights panel (Gemini 2.5 Flash) that surfaces group friction across destinations, budgets, and availability before the trip happens.</li>
+          <li>Features: destination voting, per-member budget dropdowns with auto-computed group averages, multi-member availability calendar, activity cards with voice-to-text, and real-time sync via seven-table Supabase Realtime subscription.</li>
+          <li>Shipped an analytics dashboard: 13 parallel Supabase queries, 14-day engagement chart, cohort table, 60s auto-refresh. Lazy-loaded as a 107KB chunk.</li>
+          <li>Discovery: 8 user interviews. Core finding validated the consensus problem, not the booking problem.</li>
+        </ul>
+      </div>
+
+      <hr class="detail-divider" />
+
+      <div class="detail-section">
+        <h2>Inaya</h2>
+        <p>
+          A family preparedness platform for NRI children managing aging parents in India remotely.
+          Built end-to-end: user research, product, UX, full-stack implementation, deployment, and monetisation.
+        </p>
+        <ul>
+          <li>Core mechanic: family members store health records, documents, expenses, assets, and emergency contacts into a structured vault. Vault completeness drives the Care Score, a live readiness indicator and upgrade trigger.</li>
+          <li>Monetisation: free tier so the aging parent never sees a paywall. Paid vault subscription targeting the NRI child who controls billing.</li>
+          <li>Includes Saaya: an on-device Android feature that detects when a user opens a payment app during an active unknown call. Zero-backend, entirely on-device. Fires a full-screen warning overlay and sends an SMS alert to a nominated guardian.</li>
+          <li>Saaya: 18 Kotlin files across 6 modules (~1,500 LOC). Solved OEM service survival across Xiaomi, Samsung, Oppo, Vivo.</li>
+        </ul>
+      </div>
+
+      <hr class="detail-divider" />
+
+      <div class="detail-section">
+        <h2>Tech Stack</h2>
+        <div class="skill-tags">
+          <span class="skill-tag">React 18</span>
+          <span class="skill-tag">Vite</span>
+          <span class="skill-tag">Next.js</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Supabase</span>
+          <span class="skill-tag">Gemini 2.5 Flash</span>
+          <span class="skill-tag">Claude API</span>
+          <span class="skill-tag">Claude Code SDK</span>
+          <span class="skill-tag">Vercel</span>
+          <span class="skill-tag">Railway</span>
+          <span class="skill-tag">Kotlin / Android</span>
+          <span class="skill-tag">SQL</span>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    Built by Aditya Jiddu in 2026
+  </footer>
+
+  <!-- ── RESUME MODAL ── -->
+  <div id="resume-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-label="Resume">
+      <button class="modal-close" id="resume-close-btn" aria-label="Close">✕</button>
+      <embed src="resume.pdf" type="application/pdf" class="pdf-embed" />
+    </div>
+  </div>
+  <script>
+    const resumeModal = document.getElementById("resume-modal");
+    document.getElementById("resume-btn").addEventListener("click", e => {
+      e.preventDefault();
+      resumeModal.classList.add("is-open");
+      resumeModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    });
+    document.getElementById("resume-close-btn").addEventListener("click", () => {
+      resumeModal.classList.remove("is-open");
+      resumeModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    });
+    resumeModal.addEventListener("click", e => {
+      if (e.target === resumeModal) {
+        resumeModal.classList.remove("is-open");
+        resumeModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+    });
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        resumeModal.classList.remove("is-open");
+        resumeModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+    });
+  </script>
+
+</body>
+</html>
