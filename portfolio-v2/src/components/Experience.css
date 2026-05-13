@@ -1,0 +1,124 @@
+.pf-section {
+  padding: 56px 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+.pf-exp-row {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  gap: 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  align-items: start;
+  color: inherit;
+}
+
+a.pf-exp-row {
+  transition: background 0.3s var(--ease-out-quart);
+  margin: 0 -16px;
+  padding: 24px 16px;
+  border-radius: 2px;
+}
+
+a.pf-exp-row:hover {
+  background: var(--bg-alt);
+}
+
+a.pf-exp-row:hover .pf-exp-company {
+  color: var(--accent);
+}
+
+.pf-exp-products {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.pf-exp-product-link {
+  font-size: var(--text-xl);
+  color: var(--accent);
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.2s var(--ease-out-quart);
+}
+
+.pf-exp-product-link:hover {
+  opacity: 0.7;
+}
+
+.pf-exp-sep {
+  margin: 0 12px;
+  color: var(--ink-light);
+  font-size: var(--text-xl);
+}
+
+.pf-exp-company {
+  font-size: var(--text-xl);
+  color: var(--ink);
+  line-height: 1.1;
+  margin-bottom: 4px;
+  font-weight: normal;
+  transition: color 0.3s var(--ease-out-quart);
+}
+
+.pf-exp-meta {
+  font-family: var(--sans);
+  font-size: var(--text-sm);
+  color: var(--ink-light);
+  margin-bottom: 8px;
+}
+
+.pf-exp-note {
+  font-family: var(--sans);
+  font-size: var(--text-base);
+  color: var(--ink-muted);
+  line-height: 1.6;
+  max-width: 55ch;
+}
+
+.pf-exp-right {
+  text-align: right;
+}
+
+.pf-exp-stat {
+  font-size: var(--text-2xl);
+  color: var(--accent);
+  font-weight: normal;
+  line-height: 1;
+  transition: transform 0.3s var(--ease-out-expo);
+}
+
+a.pf-exp-row:hover .pf-exp-stat {
+  transform: scale(1.05);
+}
+
+.pf-exp-stat-lbl {
+  font-family: var(--sans);
+  font-size: 0.625rem;
+  color: var(--ink-light);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .pf-section {
+    padding: 36px 20px;
+  }
+
+  .pf-exp-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  a.pf-exp-row {
+    margin: 0 -8px;
+    padding: 20px 8px;
+  }
+
+  .pf-exp-right {
+    text-align: left;
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+  }
+}

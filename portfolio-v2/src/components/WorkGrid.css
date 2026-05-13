@@ -1,0 +1,71 @@
+.pf-work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+}
+
+.pf-work-card {
+  background: var(--bg);
+  padding: 32px;
+  display: block;
+  transition: background 0.3s var(--ease-out-quart);
+}
+
+.pf-work-card:hover {
+  background: var(--bg-alt);
+}
+
+.pf-work-tag {
+  font-family: var(--sans);
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.pf-work-title {
+  font-size: var(--text-lg);
+  margin-bottom: 10px;
+  font-weight: normal;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.pf-work-outcome {
+  font-family: var(--sans);
+  font-size: var(--text-base);
+  color: var(--ink-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 50ch;
+}
+
+.pf-work-link {
+  font-family: var(--sans);
+  font-size: var(--text-sm);
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap 0.3s var(--ease-out-expo);
+}
+
+/* Arrow slides right on card hover */
+.pf-work-card:hover .pf-work-link {
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .pf-work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pf-work-card {
+    padding: 28px 20px;
+  }
+}

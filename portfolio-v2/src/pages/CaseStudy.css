@@ -1,0 +1,237 @@
+.cs-empty {
+  padding: 80px 48px;
+  text-align: center;
+}
+
+.cs-empty h1 {
+  font-size: var(--text-2xl);
+  font-weight: normal;
+  margin-bottom: 16px;
+}
+
+.cs-empty-sub {
+  font-family: var(--sans);
+  font-size: var(--text-base);
+  color: var(--ink-muted);
+  margin-bottom: 24px;
+}
+
+.cs-empty-link {
+  color: var(--accent);
+  font-family: var(--sans);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Hero */
+.cs-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--border);
+}
+
+.cs-hero-left {
+  padding: 56px 48px;
+  border-right: 1px solid var(--border);
+}
+
+.cs-hero-right {
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: var(--bg-alt);
+}
+
+.cs-title {
+  font-size: var(--text-3xl);
+  font-weight: normal;
+  line-height: 1.05;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.cs-meta {
+  font-family: var(--sans);
+  font-size: var(--text-base);
+  color: var(--ink-muted);
+}
+
+.cs-company {
+  font-size: var(--text-xl);
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.cs-years {
+  font-family: var(--sans);
+  font-size: var(--text-base);
+  color: var(--ink-light);
+}
+
+/* Impact row */
+.cs-impact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  border-bottom: 1px solid var(--border);
+}
+
+.cs-impact-item {
+  padding: 28px 48px;
+  border-right: 1px solid var(--border);
+}
+
+.cs-impact-item:last-child {
+  border-right: none;
+}
+
+.cs-impact-num {
+  font-size: var(--text-2xl);
+  color: var(--accent);
+  display: block;
+  line-height: 1;
+}
+
+.cs-impact-lbl {
+  font-family: var(--sans);
+  font-size: var(--text-xs);
+  color: var(--ink-light);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 6px;
+  display: block;
+}
+
+/* Body */
+.cs-body {
+  padding: 56px 48px;
+  max-width: 720px;
+}
+
+.cs-section {
+  margin-bottom: 48px;
+}
+
+.cs-section:last-child {
+  margin-bottom: 0;
+}
+
+.cs-section-title {
+  font-family: var(--sans);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-light);
+  margin-bottom: 16px;
+}
+
+.cs-text {
+  font-family: var(--sans);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--ink-muted);
+  max-width: 65ch;
+}
+
+.cs-list {
+  font-family: var(--sans);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--ink-muted);
+}
+
+.cs-list li {
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.cs-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* Skills */
+.cs-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cs-skill {
+  font-family: var(--sans);
+  font-size: var(--text-sm);
+  color: var(--ink-muted);
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  letter-spacing: 0.02em;
+  transition: border-color 0.2s var(--ease-out-quart), color 0.2s var(--ease-out-quart);
+}
+
+.cs-skill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Back link */
+.cs-back {
+  padding: 28px 48px 56px;
+  border-top: 1px solid var(--border);
+}
+
+.cs-back-link {
+  font-family: var(--sans);
+  font-size: var(--text-sm);
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: opacity 0.2s;
+}
+
+.cs-back-link:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .cs-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-hero-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 36px 20px;
+  }
+
+  .cs-hero-right {
+    padding: 36px 20px;
+  }
+
+  .cs-impact-item {
+    padding: 20px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cs-impact-item:last-child {
+    border-bottom: none;
+  }
+
+  .cs-body {
+    padding: 36px 20px;
+  }
+
+  .cs-back {
+    padding: 20px 20px 36px;
+  }
+}

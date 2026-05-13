@@ -1,0 +1,91 @@
+.pf-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.pf-nav-logo {
+  font-size: 14px;
+  font-family: var(--sans);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  transition: color 0.3s var(--ease-out-quart);
+}
+
+.pf-nav-logo:hover {
+  color: var(--accent);
+}
+
+.pf-nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.pf-nav-links a {
+  font-family: var(--sans);
+  font-size: var(--text-sm);
+  color: var(--ink-light);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s var(--ease-out-quart);
+  position: relative;
+}
+
+/* Hover underline that slides in */
+.pf-nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s var(--ease-out-expo);
+}
+
+.pf-nav-links a:hover::after,
+.pf-nav-links a.active::after {
+  width: 100%;
+}
+
+.pf-nav-links a:hover,
+.pf-nav-links a.active {
+  color: var(--accent);
+}
+
+.pf-nav-links .resume-link {
+  color: var(--accent);
+}
+
+.pf-nav-links .resume-link::after {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .pf-nav {
+    padding: 16px 20px;
+  }
+
+  .pf-nav-links {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .pf-nav-links {
+    gap: 12px;
+  }
+
+  .pf-nav-links a {
+    font-size: var(--text-xs);
+  }
+}
