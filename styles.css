@@ -234,6 +234,10 @@ body {
   letter-spacing: -0.02em;
 }
 
+.tagline-meta {
+  font-style: italic;
+}
+
 .bio {
   font-size: 17px;
   color: var(--ink-muted);
