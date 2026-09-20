@@ -4,29 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amadeus Labs — Aditya Jiddu</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#ffffff" id="meta-theme-color" />
+  <script>
+    (function() {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        var meta = document.getElementById('meta-theme-color');
+        if (meta) meta.content = '#050505';
+      }
+    })();
+  </script>
 </head>
 <body>
 
-  <div class="hero-outer" style="padding-bottom: 0;">
-    <nav class="site-nav">
+  <nav class="site-nav">
+    <div class="nav-inner">
       <a href="index.html" class="nav-link">Home</a>
-      <a href="portfolio.html" class="nav-link">My Portfolio</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-      <span class="nav-sep">·</span>
-      <a href="https://www.linkedin.com/in/adityajiddu/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
-      <a href="https://github.com/jidduaditya" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
+      <a href="index.html#experience" class="nav-link nav-active">Experience</a>
+      <a href="index.html#products" class="nav-link">Product Building</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+      <span class="nav-spacer"></span>
       <a href="#" class="nav-link" id="resume-btn">Resume</a>
-    </nav>
-  </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+        <span class="mode-light">Pepper</span>
+        <span class="mode-dark">Salt</span>
+      </button>
+    </div>
+  </nav>
 
   <main class="detail-main">
 
-    <div class="detail-hero">
+    <a href="index.html#experience" class="back-link">&larr; Back to Experience</a>
+
+    <div class="detail-hero" style="view-transition-name: detail-hero">
       <span class="label">Experience</span>
-      <h1 class="detail-company">Amadeus Labs</h1>
-      <p class="detail-role">Product Manager</p>
+      <h1 class="detail-company">Amadeus</h1>
+      <p class="detail-role">Product Manager, Altea Seating</p>
       <div class="detail-meta">
         <span class="detail-date">June 2023 – August 2025</span>
         <span class="detail-location">India</span>
@@ -38,9 +54,9 @@
       <div class="detail-section">
         <h2>About the Role</h2>
         <p>
-          Owned a key product value stream within an enterprise airline digital platform, enabling scalable,
-          customer-facing capabilities used globally. Responsible for end-to-end product management — from
-          discovery and problem validation to delivery, iteration, and commercial impact.
+          Product Manager for Altea Seating, the seating product inside Amadeus's airline passenger
+          service system. Owned the backlog and roadmap end to end, from problem validation through
+          delivery and iteration.
         </p>
       </div>
 
@@ -54,8 +70,8 @@
           <li>Translated complex user and business needs into clear product definitions, user stories, and acceptance criteria.</li>
           <li>Balanced delivery pace with product quality, enabling consistent release cycles while reducing rework.</li>
           <li>Collaborated with stakeholders across markets to ensure scalable and consistent digital experiences.</li>
-          <li>Improved defect prioritisation and feedback loops, contributing to a 25% reduction in customer-reported issues.</li>
-          <li>Supported initiatives generating €4M+ in annual recurring revenue through incremental product improvements.</li>
+          <li>Improved defect prioritisation and feedback loops, cutting customer queries by 70%.</li>
+          <li>Configured 15 to 18 airlines directly on a platform carrying about €4M ARR across 200+ airlines.</li>
         </ul>
       </div>
 
@@ -65,12 +81,12 @@
         <h2>Impact</h2>
         <div class="impact-row">
           <div class="impact-stat">
-            <span class="impact-number">€4M+</span>
-            <span class="impact-label">Annual recurring revenue supported</span>
+            <span class="impact-number">70%</span>
+            <span class="impact-label">Reduction in customer queries</span>
           </div>
           <div class="impact-stat">
-            <span class="impact-number">25%</span>
-            <span class="impact-label">Reduction in customer-reported issues</span>
+            <span class="impact-number">200+</span>
+            <span class="impact-label">Airlines on the platform, 15 to 18 configured directly</span>
           </div>
         </div>
       </div>
@@ -107,6 +123,24 @@
     </div>
   </div>
   <script>
+    // Theme toggle
+    (function () {
+      var toggle = document.getElementById('theme-toggle');
+      var metaColor = document.getElementById('meta-theme-color');
+      toggle.addEventListener('click', function () {
+        var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        if (isDark) {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'light');
+          if (metaColor) metaColor.content = '#ffffff';
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+          if (metaColor) metaColor.content = '#050505';
+        }
+      });
+    })();
+
     const resumeModal = document.getElementById("resume-modal");
     document.getElementById("resume-btn").addEventListener("click", e => {
       e.preventDefault();

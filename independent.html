@@ -4,26 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Independent Product Work — Aditya Jiddu</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#ffffff" id="meta-theme-color" />
+  <script>
+    (function() {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        var meta = document.getElementById('meta-theme-color');
+        if (meta) meta.content = '#050505';
+      }
+    })();
+  </script>
 </head>
 <body>
 
-  <div class="hero-outer" style="padding-bottom: 0;">
-    <nav class="site-nav">
+  <nav class="site-nav">
+    <div class="nav-inner">
       <a href="index.html" class="nav-link">Home</a>
-      <a href="portfolio.html" class="nav-link">My Portfolio</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-      <span class="nav-sep">·</span>
-      <a href="https://www.linkedin.com/in/adityajiddu/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
-      <a href="https://github.com/jidduaditya" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
+      <a href="index.html#experience" class="nav-link">Experience</a>
+      <a href="index.html#products" class="nav-link nav-active">Product Building</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+      <span class="nav-spacer"></span>
       <a href="#" class="nav-link" id="resume-btn">Resume</a>
-    </nav>
-  </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+        <span class="mode-light">Pepper</span>
+        <span class="mode-dark">Salt</span>
+      </button>
+    </div>
+  </nav>
 
   <main class="detail-main">
 
-    <div class="detail-hero">
+    <a href="index.html#products" class="back-link">&larr; Back to Product Building</a>
+
+    <div class="detail-hero" style="view-transition-name: detail-hero">
       <span class="label">Current</span>
       <h1 class="detail-company">Independent Product Work</h1>
       <p class="detail-role">AI-Native Product Builder</p>
@@ -112,6 +128,24 @@
     </div>
   </div>
   <script>
+    // Theme toggle
+    (function () {
+      var toggle = document.getElementById('theme-toggle');
+      var metaColor = document.getElementById('meta-theme-color');
+      toggle.addEventListener('click', function () {
+        var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        if (isDark) {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'light');
+          if (metaColor) metaColor.content = '#ffffff';
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+          if (metaColor) metaColor.content = '#050505';
+        }
+      });
+    })();
+
     const resumeModal = document.getElementById("resume-modal");
     document.getElementById("resume-btn").addEventListener("click", e => {
       e.preventDefault();

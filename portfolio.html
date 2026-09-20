@@ -4,26 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio — Aditya Jiddu</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#ffffff" id="meta-theme-color" />
+  <script>
+    (function() {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        var meta = document.getElementById('meta-theme-color');
+        if (meta) meta.content = '#050505';
+      }
+    })();
+  </script>
 </head>
 <body>
 
+  <!-- ── NAV ── -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#experience" class="nav-link">Experience</a>
+      <a href="index.html#products" class="nav-link">Product Building</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+      <span class="nav-spacer"></span>
+      <a href="#" class="nav-link" id="resume-btn">Resume</a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+        <span class="mode-light">Pepper</span>
+        <span class="mode-dark">Salt</span>
+      </button>
+    </div>
+  </nav>
+
   <!-- ── HERO ── -->
   <div class="hero-outer" style="padding-bottom: 0;">
-    <nav class="site-nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="portfolio.html" class="nav-link nav-active">My Portfolio</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-      <span class="nav-sep">·</span>
-      <a href="https://www.linkedin.com/in/adityajiddu/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
-      <a href="https://github.com/jidduaditya" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
-      <a href="#" class="nav-link" id="resume-btn">Resume</a>
-    </nav>
     <div class="intro" style="gap: 12px;">
       <span class="label">Work</span>
-      <h1 class="name">Portfolio</h1>
-      <p class="bio">Product documents from real-world projects — PRDs, discovery artefacts, and delivery work.</p>
+      <h1 class="name word-reveal">Portfolio</h1>
+      <p class="bio">Product documents from real projects. PRDs, discovery artefacts, and delivery work.</p>
     </div>
   </div>
 
@@ -44,9 +62,9 @@
         <div class="doc-meta">
           <span class="doc-type">PRD</span>
         </div>
-        <h3 class="doc-title">Group 7 — Product Requirements Document</h3>
+        <h3 class="doc-title">Group 7 Product Requirements Document</h3>
         <p class="doc-desc">Product requirements document outlining feature scope, user needs, and delivery specifications for the Group 7 initiative.</p>
-        <button class="doc-open-btn">View Document →</button>
+        <button class="doc-open-btn">View Document &rarr;</button>
       </div>
 
       <div class="doc-card" data-pdf="Group7_Team_Thala_NoSheeet_PRD_v2.docx.pdf">
@@ -60,11 +78,11 @@
           </svg>
         </div>
         <div class="doc-meta">
-          <span class="doc-type">PRD · v2</span>
+          <span class="doc-type">PRD &middot; v2</span>
         </div>
-        <h3 class="doc-title">NoSheeet — PRD v2</h3>
+        <h3 class="doc-title">NoSheeet PRD v2</h3>
         <p class="doc-desc">Second iteration of the NoSheeet PRD developed by Team Thala, refining product scope, user stories, and acceptance criteria.</p>
-        <button class="doc-open-btn">View Document →</button>
+        <button class="doc-open-btn">View Document &rarr;</button>
       </div>
 
       <div class="doc-card" data-pdf="PRD_Peak Guardian - Team Thala.docx.pdf">
@@ -80,9 +98,9 @@
         <div class="doc-meta">
           <span class="doc-type">PRD</span>
         </div>
-        <h3 class="doc-title">Peak Guardian — PRD</h3>
+        <h3 class="doc-title">Peak Guardian PRD</h3>
         <p class="doc-desc">Full product requirements document for Peak Guardian, covering problem definition, user journeys, and feature specifications.</p>
-        <button class="doc-open-btn">View Document →</button>
+        <button class="doc-open-btn">View Document &rarr;</button>
       </div>
 
     </div>
@@ -96,7 +114,7 @@
   <!-- ── PDF MODAL ── -->
   <div id="pdf-modal" class="modal-overlay" aria-hidden="true">
     <div class="modal-box" role="dialog" aria-label="Document viewer">
-      <button class="modal-close" id="modal-close-btn" aria-label="Close">✕</button>
+      <button class="modal-close" id="modal-close-btn" aria-label="Close">&#10005;</button>
       <embed id="pdf-embed" src="" type="application/pdf" class="pdf-embed" />
     </div>
   </div>
@@ -104,7 +122,7 @@
   <!-- ── RESUME MODAL ── -->
   <div id="resume-modal" class="modal-overlay" aria-hidden="true">
     <div class="modal-box" role="dialog" aria-label="Resume">
-      <button class="modal-close" id="resume-close-btn" aria-label="Close">✕</button>
+      <button class="modal-close" id="resume-close-btn" aria-label="Close">&#10005;</button>
       <embed src="resume.pdf" type="application/pdf" class="pdf-embed" />
     </div>
   </div>
@@ -163,6 +181,82 @@
         document.body.style.overflow = '';
       }
     });
+
+    // ── THEME TOGGLE ──
+    (function () {
+      var toggle = document.getElementById('theme-toggle');
+      var metaColor = document.getElementById('meta-theme-color');
+      toggle.addEventListener('click', function () {
+        var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        if (isDark) {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'light');
+          if (metaColor) metaColor.content = '#ffffff';
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+          if (metaColor) metaColor.content = '#050505';
+        }
+      });
+    })();
+
+    // ── INTERACTIVE EFFECTS ──
+    (function () {
+      var prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return;
+
+      // Word reveal setup
+      document.querySelectorAll('.word-reveal').forEach(function (el) {
+        var text = el.textContent.trim();
+        var words = text.split(/\s+/);
+        el.textContent = '';
+        words.forEach(function (word, i) {
+          var span = document.createElement('span');
+          span.className = 'word';
+          span.style.setProperty('--word-i', i);
+          span.textContent = word;
+          if (i > 0) el.appendChild(document.createTextNode(' '));
+          el.appendChild(span);
+        });
+        // Trigger immediately for portfolio page title
+        el.classList.add('is-visible');
+      });
+
+      // Cursor spotlight on doc-cards
+      document.querySelectorAll('.doc-card').forEach(function (card) {
+        card.addEventListener('mousemove', function (e) {
+          var rect = card.getBoundingClientRect();
+          card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
+          card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+        });
+      });
+
+      // Multi-layer card tilt
+      document.querySelectorAll('.doc-card').forEach(function (card) {
+        card.style.perspective = '800px';
+
+        card.addEventListener('mousemove', function (e) {
+          var rect = card.getBoundingClientRect();
+          var x = (e.clientX - rect.left) / rect.width - 0.5;
+          var y = (e.clientY - rect.top) / rect.height - 0.5;
+          var rotateX = -y * 8;
+          var rotateY = x * 8;
+          card.style.transform = 'translateY(-2px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+        });
+
+        card.addEventListener('mouseleave', function () {
+          card.style.transition = 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), background 0.25s ease, box-shadow 0.25s ease';
+          card.style.transform = '';
+          setTimeout(function () {
+            card.style.transition = 'background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease';
+          }, 500);
+        });
+
+        card.addEventListener('mouseenter', function () {
+          card.style.transition = 'background 0.25s ease, box-shadow 0.25s ease';
+        });
+      });
+    })();
   </script>
 
 </body>

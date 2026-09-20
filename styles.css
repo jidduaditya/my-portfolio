@@ -863,6 +863,21 @@ footer {
 }
 
 /* ── CONTACT PAGE ── */
+/* ── CONTACT (home section) ── */
+.contact-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 48px;
+  background: var(--bg);
+}
+
+.contact-home-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1617,6 +1632,11 @@ html.gate-skip #gate {
   }
 
   .products {
+    padding: 48px 20px;
+    min-height: auto;
+  }
+
+  .contact-home {
     padding: 48px 20px;
     min-height: auto;
   }
