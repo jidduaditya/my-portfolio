@@ -43,7 +43,7 @@
         <h1 class="name word-reveal">Aditya Jiddu</h1>
         <p class="tagline">Senior Product Manager with a systems and platform specialism, now building AI-native products. <span class="tagline-meta">Bangalore, India &middot; Open to work</span></p>
         <p class="bio">
-          <strong>10+ years across telecom</strong>, broadband, loyalty, and airline tech, with about two of those in travel at Amadeus. Earlier titles were Process Designer, Solutions Architect, and Technical Product Owner. <strong>Shipped groupism.space and Inaya</strong> using Claude Code, Supabase, and Vercel. <strong>Systems and platform work</strong> is the specialism: multi-tenant products, integrations and distribution, and migrations. Comfortable <strong>with backlog discipline</strong> at platform scale.
+          <strong>Turns domain requirements into API contracts</strong>, system architecture, and delivered software. 10+ years across airline distribution, telecom, and consumer loyalty systems. <strong>Owns and prioritises technical backlogs</strong> from intake through delivery and adoption, sequencing cross-team dependencies in Agile and SAFe. <strong>Since 2025, discovery to launch on AI-native products</strong>: user research, PRDs, model selection, and guardrails. Shipped <strong>Inaya</strong> using Claude Code, Supabase, and Vercel.
         </p>
         <a href="#contact" class="hero-cta">Get in touch</a>
       </div>
@@ -59,35 +59,35 @@
       <h2 class="section-title word-reveal reveal">Experience</h2>
 
       <a href="amadeus.html" class="exp-entry reveal" style="--i:0">
-        <div class="exp-impact">70%</div>
+        <div class="exp-impact">70%<span class="exp-impact-note">reduction in seat-change queries</span></div>
         <div class="exp-header">
           <span class="exp-company">Amadeus</span>
           <span class="exp-period">2023 &ndash; 2025</span>
         </div>
         <div class="exp-role">Product Manager, Altea Seating</div>
-        <p class="exp-summary">Owned the product backlog for Altea Seating, Amadeus's airline seating product (~€4M ARR, 200+ airlines on the platform). Cut customer queries by 70%. Established the UAT strategy and made hard prioritisation calls under release pressure in SAFe PI Planning.</p>
+        <p class="exp-summary">Owned the feature backlog for Altea Seating, the airline seating product used by 200+ carriers and carrying roughly €4M in product ARR. Shipped a structured seat-change reason taxonomy that cut pilot-airline seat-change queries by 70%. Configured seating rules for 15 to 18 airlines and supported Southwest's move to assigned paid seating.</p>
       </a>
 
       <a href="infosys.html" class="exp-entry reveal" style="--i:1">
-        <div class="exp-impact">1.9M+</div>
+        <div class="exp-impact">1.9M+<span class="exp-impact-note">monthly users on the rebuilt purchase journey</span></div>
         <div class="exp-header">
           <span class="exp-company">Infosys</span>
           <span class="exp-period">2021 &ndash; 2023</span>
         </div>
         <div class="exp-client">TalkTalk, UK</div>
         <div class="exp-role">Technical Product Owner</div>
-        <p class="exp-summary">Managed the product backlog for TalkTalk's AWS-hosted digital sales platform, part of a site serving 1.9M+ monthly users. Turned business requirements and solution designs into engineering-ready work, partnering with UX through to release.</p>
+        <p class="exp-summary">Owned the technical backlog for TalkTalk UK's consumer broadband purchase journey, the primary purchase journey on a site serving 1.9M monthly users. Rebuilt it from a monolith to a 3-tier microservices architecture on AWS, defining REST API contracts and integrating Openreach APIs, network systems, and CRM.</p>
       </a>
 
       <a href="tcs-vodacom.html" class="exp-entry reveal" style="--i:2">
-        <div class="exp-impact">1M DAU</div>
+        <div class="exp-impact">1M<span class="exp-impact-note">daily active user increase on VodaBucks</span></div>
         <div class="exp-header">
           <span class="exp-company">TCS</span>
           <span class="exp-period">2018 &ndash; 2021</span>
         </div>
         <div class="exp-client">Vodacom, South Africa</div>
         <div class="exp-role">Solutions Architect</div>
-        <p class="exp-summary">End-to-end solution design for VodaBucks, Vodacom's loyalty and e-commerce platform, built from zero to launch, with product-lead responsibilities alongside architecture. Hit 1M daily active users at peak; the platform has since grown to 8.9M registered users and 3.3 billion rand transacted.</p>
+        <p class="exp-summary">Launched VodaBucks 0-to-1, Vodacom South Africa's loyalty and e-commerce product built on a 26M-subscriber base. Defined the engagement and retention model around the earn-and-burn loop, increasing daily active users by 1 million. Now one of the country's largest loyalty programmes at 8.9M registered users and 3.3 billion rand transacted.</p>
       </a>
 
     </div>
@@ -102,23 +102,8 @@
 
       <div class="product-grid">
 
-        <div class="product-card reveal" style="--i:0">
-          <span class="product-label">Live</span>
-          <h3 class="product-name">groupism.space</h3>
-          <p class="product-desc">
-            A group trip coordinator built around one insight: the problem is unspoken disagreement, not logistics.
-            An AI insights panel (Gemini 2.5 Flash) reads the room and surfaces where the group is quietly misaligned
-            before the trip starts. Seven-table Supabase Realtime subscription so nothing ever feels stale.
-          </p>
-          <div class="product-stack">
-            <span class="product-stack-tag">React 18</span>
-            <span class="product-stack-tag">Supabase Realtime</span>
-            <span class="product-stack-tag">Gemini 2.5 Flash</span>
-            <span class="product-stack-tag">Vercel</span>
-          </div>
-        </div>
 
-        <div class="product-card reveal" style="--i:1">
+        <div class="product-card reveal" style="--i:0">
           <span class="product-label">Live</span>
           <h3 class="product-name">Inaya + Saaya</h3>
           <p class="product-desc">
@@ -215,27 +200,6 @@
     </div>
   </section>
 
-  <div class="section-divider"></div>
-
-  <!-- ── SUBSCRIBE ── -->
-  <section class="subscribe-section reveal">
-    <div class="subscribe-inner">
-      <h2 class="subscribe-title word-reveal">Stay in the loop</h2>
-      <p class="subscribe-desc">Occasional updates on product thinking and work worth sharing.</p>
-      <form class="subscribe-form" id="subscribe-form" novalidate>
-        <input
-          type="email"
-          id="subscribe-email"
-          class="subscribe-input"
-          placeholder="your@email.com"
-          required
-          autocomplete="email"
-        />
-        <button type="submit" class="subscribe-btn" id="subscribe-submit">Subscribe</button>
-      </form>
-      <p class="subscribe-feedback" id="subscribe-feedback" aria-live="polite"></p>
-    </div>
-  </section>
 
   <!-- ── FOOTER ── -->
   <footer>
@@ -323,57 +287,6 @@
     })();
   </script>
 
-  <!-- ── SUPABASE ── -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script>
-    const { createClient } = supabase;
-    const db = createClient(
-      'https://gtcrseahjnznilnzkscv.supabase.co',
-      'sb_publishable_hotdf8Nax3QZwY0kTYv5Iw_Yb2wJHT8'
-    );
-
-    // ── SUBSCRIBE FORM ──
-    (function () {
-      const form     = document.getElementById('subscribe-form');
-      const input    = document.getElementById('subscribe-email');
-      const btn      = document.getElementById('subscribe-submit');
-      const feedback = document.getElementById('subscribe-feedback');
-
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const email = input.value.trim();
-        if (!email) return;
-
-        btn.disabled = true;
-        btn.textContent = 'Subscribing...';
-        feedback.textContent = '';
-        feedback.className = 'subscribe-feedback';
-
-        const { error } = await db.from('subscribers').insert([{ email }]);
-
-        if (error) {
-          if (error.code === '23505') {
-            feedback.textContent = "You're already subscribed!";
-            feedback.classList.add('subscribe-feedback--info');
-          } else {
-            feedback.textContent = 'Something went wrong. Please try again.';
-            feedback.classList.add('subscribe-feedback--error');
-          }
-          btn.disabled = false;
-          btn.textContent = 'Subscribe';
-        } else {
-          feedback.textContent = "You're in! Thanks for subscribing.";
-          feedback.classList.add('subscribe-feedback--success');
-          form.reset();
-          btn.disabled = false;
-          btn.textContent = 'Subscribe';
-          var sec = document.querySelector('.subscribe-section');
-          sec.classList.add('glow');
-          sec.addEventListener('animationend', function() { sec.classList.remove('glow'); }, { once: true });
-        }
-      });
-    })();
-  </script>
 
   <!-- ── ANIMATION ENGINE ── -->
   <script>
